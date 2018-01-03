@@ -13,7 +13,8 @@
     <!-- MailChimp CSS -->
     <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
     <style type="text/css">
-        #mc_embed_signup{background:transparent; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+        #mc_embed_signup{background:#1a237e; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+        #signup_confirm{background:#1a237e; clear:left; font:14px Helvetica,Arial,sans-serif;color:#fff; width:70%;padding:20px;margin:0 auto 5px auto;}
         /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
         We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
     </style>
@@ -43,24 +44,25 @@
                         <span class="flip flip1">
                             <span class="animated flipInY">Individuals</span>
                             <span>Cooperatives</span>
-                            <span>Cooperatives</span>
                         </span>
                         to automate
                         <br />
                         <span class="flip flip2">
                             <span class="animated flipInY">Daily</span>
                             <span>Weekly</span>
-                            <span>Quarterly </span>
+                            <span>Fortnightly</span>
                             <span>Monthly</span>
+                            <span>Quarterly</span>
                         </span> Contributory Savings
                     </h1>
                     <hr />
                     <p class="lead">We are set to launch in Q1 2018.</p>
                     <h3 class="text-center">Allow us holla when launched</h3>
+                    
                     <!-- Begin MailChimp Signup Form -->
-                    <div id="mc_embed_signup">
-                        <form action="https://etibe.us16.list-manage.com/subscribe/post?u=c07513f922db24dd667b836c6&amp;id=4fe43a16f5" method="post"
-                            id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup" class="signup-form-container">
+                        <form action="https://etibe.us16.list-manage.com/subscribe/post-json?u=c07513f922db24dd667b836c6&amp;id=4fe43a16f5&amp;c=?" method="get"
+                        id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                             <div id="mc_embed_signup_scroll">
                                 <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
                                 <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
@@ -73,9 +75,9 @@
                             </div>
                         </form>
                     </div>
-                    <!--End mc_embed_signup-->
+                    <div id="signup_confirm" class="signup-message-container invisible"></div>
                     <h6 class="text-center privacy-line">We won't share your information with anyone. <a href="#privacy">Privacy Policy</a></h6>
-
+                    <!--End mc_embed_signup-->
                     <!--<p class="lead" id="etibeLanguages"></p>-->
                     <!-- <p class="lead">
                         <a href="#features" class="btn btn-lg btn-default">Learn more</a>
@@ -112,6 +114,43 @@
                 if (active2.next() && active2.next().length) { active2.next().addClass('animated flipInY'); } else { active2.siblings(":first").addClass('animated flipInY'); }
             }, 5000);
         });
+
+        // MailChimp Subscribe Form
+        $(document).ready( function () {
+            // I only have one form on the page but you can be more specific if need be.
+            var $form = $('form.validate');
+
+            if ( $form.length > 0 ) {
+                $('form input[type="submit"]').bind('click', function ( event ) {
+                    if ( event ) event.preventDefault();
+                    // validate_input() is a validation function I wrote, you'll have to substitute this with your own.
+                    // if ( validate_input($form) ) { register($form); }
+                    register($form);
+                });
+            }
+        });
+
+        function register($form) {
+            $.ajax({
+                type: $form.attr('method'),
+                url: $form.attr('action'),
+                data: $form.serialize(),
+                cache       : false,
+                dataType    : 'json',
+                contentType: "application/json; charset=utf-8",
+                error       : function(err) { alert("Could not connect to the registration server. Please try again later."); },
+                success     : function(data) {
+                    if (data.result != "success") {
+                        // Something went wrong, do something to notify the user. maybe alert(data.msg);
+                    } else {
+                        // It worked, carry on...
+                        var msg = 'Thank you for trusting us with your information. Please check your mail to confirm your subscription';
+                        $('.signup-message-container.invisible').removeClass('invisible').html(msg);
+                        $('.signup-form-container').remove();
+                    }
+                }
+            });
+        }
     </script>
     <script src="js/script.js"></script>
 
