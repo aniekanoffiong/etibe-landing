@@ -1,0 +1,29 @@
+{
+  "name": "etibe-landing",
+  "version": "0.1.0",
+  "description": "Landing Page for etibe.ng",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aniekanoffiong/etibe-landing.git"
+  },
+  "keywords": [
+    "nodejs",
+    "etibe",
+    "etibe.ng",
+    "landing-page"
+  ],
+  "author": "Offiong Aniekan <ekanoffiong@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aniekanoffiong/etibe-landing/issues"
+  },
+  "homepage": "https://github.com/aniekanoffiong/etibe-landing#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome To etibe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+    crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+    
+    <!-- MailChimp CSS -->
+    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        #mc_embed_signup{background:transparent; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+        /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+    <!--/ MailChimp CSS -->
+
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/animate.min.css" />
+</head>
+<body>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand nav-logo-container">
+                            etibe    
+                        <!-- <img src="{{ asset('images/pennysave.png') }}" class="nav-logo" alt="PennySave NG"> --></h3>
+                        <nav>
+                            <ul class="nav masthead-nav">
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="inner cover">
+                    <h1 class="cover-heading"><b>etibe helps </b>
+                        <br />
+                        <span class="flip flip1">
+                            <span class="animated flipInY">Individuals</span>
+                            <span>Cooperatives</span>
+                            <span>Cooperatives</span>
+                        </span>
+                        to automate
+                        <br />
+                        <span class="flip flip2">
+                            <span class="animated flipInY">Daily</span>
+                            <span>Weekly</span>
+                            <span>Quarterly </span>
+                            <span>Monthly</span>
+                        </span> Contributory Savings
+                    </h1>
+                    <hr />
+                    <p class="lead">We are set to launch in Q1 2018.</p>
+                    <h3 class="text-center">Allow us holla when launched</h3>
+                    <!-- Begin MailChimp Signup Form -->
+                    <div id="mc_embed_signup">
+                        <form action="https://etibe.us16.list-manage.com/subscribe/post?u=c07513f922db24dd667b836c6&amp;id=4fe43a16f5" method="post"
+                            id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <div id="mc_embed_signup_scroll">
+                                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                    <input type="text" name="b_c07513f922db24dd667b836c6_4fe43a16f5" tabindex="-1" value="">
+                                </div>
+                                <div class="clear">
+                                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--End mc_embed_signup-->
+                    <h6 class="text-center privacy-line">We won't share your information with anyone. <a href="#privacy">Privacy Policy</a></h6>
+
+                    <!--<p class="lead" id="etibeLanguages"></p>-->
+                    <!-- <p class="lead">
+                        <a href="#features" class="btn btn-lg btn-default">Learn more</a>
+                    </p> -->
+                </div>
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p>
+                            <span class="footer-info">
+                                &copy; <script>document.write(new Date().getFullYear())</script> <a href="/">etibe.ng.</a> All Rights Reserved.
+                            </span>
+                            <span class="footer-social">
+                                <a href="https://www.facebook.com/myetibe"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.twitter.com/myetibe"><i class="fa fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/myetibe"><i class="fa fa-instagram"></i></a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+    crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            setInterval(function()  { 
+                var active = $(".flip1 .animated.flipInY").removeClass('animated flipInY'); 
+                var active2 = $(".flip2 .animated.flipInY").removeClass('animated flipInY'); 
+                if (active.next() && active.next().length) { active.next().addClass('animated flipInY'); } else { active.siblings(":first").addClass('animated flipInY'); }
+                if (active2.next() && active2.next().length) { active2.next().addClass('animated flipInY'); } else { active2.siblings(":first").addClass('animated flipInY'); }
+            }, 5000);
+        });
+    </script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
