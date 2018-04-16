@@ -122,6 +122,14 @@ body {
     }
 }
 
+
+/*
+ * Navbar logo
+ */
+.nav-logo {
+    max-width: 120px;
+}
+
 /*
  * Cover
  */
